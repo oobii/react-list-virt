@@ -1,4 +1,4 @@
-const List = ({d: data = [], renderEmpty,  f: func}) => {
+const List = ({d: data = [], renderEmpty,  renderItem}) => {
 
     if(!data.length){ return renderEmpty }
 
@@ -8,8 +8,7 @@ const List = ({d: data = [], renderEmpty,  f: func}) => {
         <ul>
             { data.map((peak,i) => { return (
                 <li key={i}>
-                    {/* {peak.name} - {peak.elevation.toLocaleString()}m */}
-                    { func(peak) }
+                    { renderItem(peak) }
                 </li>
             )})
             }
